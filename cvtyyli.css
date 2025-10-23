@@ -1,0 +1,234 @@
+body {
+   font-family: 'Arial', sans-serif;
+   background: linear-gradient(to bottom, #ffffff, #2e91c7);
+   height: 111vh;
+   color: #333;
+   margin: 0;
+   padding: 0;
+  }
+  hr {
+    background: linear-gradient(to right, rgb(0, 0, 0), #2e91c7);
+  }
+ table {
+  width: 90%;
+  margin: 40px auto;
+  border: 2px solid #5D737E;
+  border-radius: 12px;
+  border-collapse: separate;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  background-color: #fdfdfd;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  transition: transform 0.3s ease;
+}
+
+table:hover {
+  transform: scale(1.01);
+}
+
+
+.language-switcher {
+  text-align: right;
+  margin: 10px;
+  font-size: 14px;
+}
+.language-switcher a {
+  text-decoration: none;
+  margin: 0 5px;
+  color: #333;
+}
+.language-switcher a:hover {
+  color: #0077cc;
+}
+
+
+  ul {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: larger;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 15%;
+    background-image: url(https://img.freepik.com/premium-photo/html-web-design-code-developers-designers_372999-4791.jpg?w=740);
+    position: fixed;
+    height: 100%;
+    overflow: auto;
+  }
+  
+  li a {
+    
+    display: block;
+    color: #ffdd55;
+    padding: 90px 16px;
+    text-decoration: none;
+    border: 2px solid #000000; 
+    border-radius: 10px; 
+  }
+  
+  
+  li a:hover:not(.active) {
+    background-color: #b2a72d;
+    opacity: 0.2;
+    color: rgb(0, 0, 0);
+    
+  }
+  header {
+    font-size: 30px;
+    text-align: justify;
+    margin-left: 15%;
+    padding: 1px 16px;
+    height: 1000px;
+    
+
+  }
+  .timeline {
+  margin-left: 0%;
+  padding: 20px;
+  border-left: 4px solid #2e91c7;
+}
+
+.timeline-item {
+  margin-bottom: 30px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -10px;
+  top: 5px;
+  width: 15px;
+  height: 15px;
+  background-color: #2e91c7;
+  border-radius: 50%;
+}
+  .href-container {
+    display: flex;
+  }
+  .href-container a {
+    background-color: white;
+    color: black;
+    border: 2px solid #5D737E;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    width: 150px;
+  }
+  .href-container a:link, .href-container a:visited {
+    color: #000000;
+    background-color:#2e91c7 ;
+  }
+  
+  .href-container a:hover, .href-container a:active {
+    background-color: #5D737E;
+    color: white;
+  }
+  button {
+    background-color: #04AA6D; 
+  border-radius: 8px;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  }
+  input[type=text], select {
+    width: 455px; 
+    padding: 12px 20px;
+    margin: 8px 0;    
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+  }
+  
+  button:hover {
+    background-color: #c0392b;
+  }
+  .img-container{
+    text-align: right; 
+    float: right;
+    width: 35%; 
+    margin-left: 20px; 
+    border-radius: 15px; 
+  }
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr; 
+  gap: 20px;
+  justify-items: start; 
+  text-align: left;
+}
+
+.kortti {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 140px;
+  transition: transform 0.3s ease;
+  width: 300px;
+}
+
+
+.kortti:hover {
+  transform: scale(1.05);
+}
+
+.kortti img {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.kortti h3 {
+  text-align: center;
+  margin: 10px 0 5px;
+  color: #6b3e26;
+}
+
+.kortti p {
+  text-align: center;
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+.kortti a {
+  display: inline-block;
+  padding: 8px 12px;
+  background-color: #ffdd55;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+ 
+}
+
+.kortti a:hover {
+  background-color: #a0522d;
+}
+  .footer {
+   
+    color: #000000;
+    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    
+}
+
+.footer-content {
+   
+    flex-direction: column;
+    align-items: center;
+}
+.footer-content p {
+  margin: 5px 0;
+}
+
