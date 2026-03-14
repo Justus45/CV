@@ -12,20 +12,23 @@
     <nav>
         <div class="container">
             <div class="logo">JP</div>
-            <button class="menu-toggle" onclick="toggleMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
             <ul id="navMenu">
                 <li><a href="index.html#home">Etusivu</a></li>
                 <li><a href="index.html#projects">Projektit</a></li>
                 <li><a href="index.html#skills">Osaaminen</a></li>
                 <li><a href="tietoja.html">Tietoja minusta</a></li>
             </ul>
+             <div style="display:flex;align-items:center;gap:12px;">
+                <button class="menu-toggle" id="menuToggle" aria-label="Avaa valikko">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
                 <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Vaihda teema" aria-label="Vaihda teema"></button>
+            </div>
         </div>
     </nav>
+
 
     <div class="hero">
         <div class="hero-content">
@@ -152,68 +155,54 @@
             <p>&copy; 2025 Justus Putkonen. Kaikki oikeudet pidätetään.</p>
         </div>
       </footer>
-    <script>
-       // Burgeri-valikko
-        const menuToggle = document.getElementById('menuToggle');
-        const navMenu = document.getElementById('navMenu');
+   <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('navMenu');
 
-        menuToggle.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
-            menuToggle.classList.toggle('open');
+    function toggleMenu() {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('open');
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+
+    document.querySelectorAll('#navMenu a').forEach(link => {
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('open');
         });
+    });
 
-        // Sulje valikko kun linkkiä klikataan
-        document.querySelectorAll('#navMenu a').forEach(link => {
-            link.addEventListener('click', function() {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('open');
-
-                // Smooth scroll ankkurilinkeille
-                const href = this.getAttribute('href');
-                if (href.startsWith('#')) {
-                    const target = document.querySelector(href);
-                    if (target) {
-                        const offset = 80;
-                        const targetPosition = target.offsetTop - offset;
-                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                    }
-                }
-            });
-        });
-
-        // Sulje valikko klikatessa sen ulkopuolella
-        document.addEventListener('click', function(e) {
-            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
-                navMenu.classList.remove('active');
-                menuToggle.classList.remove('open');
-            }
-        });
-
-         let isBlueTheme = false;
-
-        function toggleTheme() {
-            isBlueTheme = !isBlueTheme;
-            const body = document.body;
-            const btn = document.getElementById('themeToggle');
-
-            if (isBlueTheme) {
-                body.classList.add('theme-blue');
-                btn.classList.add('active');
-            } else {
-                body.classList.remove('theme-blue');
-                btn.classList.remove('active');
-            }
-
-            localStorage.setItem('theme', isBlueTheme ? 'blue' : 'red');
+    document.addEventListener('click', function(e) {
+        if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('open');
         }
+    });
 
-        window.addEventListener('DOMContentLoaded', () => {
-            const saved = localStorage.getItem('theme');
-            if (saved === 'blue') {
-                isBlueTheme = false;
-                toggleTheme();
-            }
-        });
-    </script>
+    let isBlueTheme = false;
+
+    function toggleTheme() {
+        isBlueTheme = !isBlueTheme;
+        const body = document.body;
+        const btn = document.getElementById('themeToggle');
+        if (isBlueTheme) {
+            body.classList.add('theme-blue');
+            btn.classList.add('active');
+        } else {
+            body.classList.remove('theme-blue');
+            btn.classList.remove('active');
+        }
+        localStorage.setItem('theme', isBlueTheme ? 'blue' : 'red');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+        const saved = localStorage.getItem('theme');
+        if (saved === 'blue') {
+            isBlueTheme = false;
+            toggleTheme();
+        }
+    });
+</script>
 </body>
 </html>

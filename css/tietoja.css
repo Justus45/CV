@@ -76,6 +76,26 @@ nav a:hover {
     color: #ee1717;
 }
 
+ .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
 .menu-toggle {
     display: none;
     flex-direction: column;
@@ -403,41 +423,40 @@ footer {
         padding-top: 70px;
     }
  
-    /* Navigaatio */
-    nav .container {
-        padding: 15px 20px;
-    }
+    .menu-toggle { display: flex; }
  
-    nav ul {
-        position: fixed;
-        top: 70px;
-        left: 0;
-        right: 0;
-        background: rgba(255, 255, 255, 0.98);
-        flex-direction: column;
-        gap: 0;
-        padding: 10px 20px 20px;
-        transform: translateX(-100%);
-        transition: transform 0.3s ease;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-    }
+            nav ul {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                right: 0;
+                background: rgba(255,255,255,0.98);
+                backdrop-filter: blur(12px);
+                flex-direction: column;
+                gap: 0;
+                padding: 0;
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.4s cubic-bezier(0.4,0,0.2,1),
+                            box-shadow 0.3s ease;
+                box-shadow: none;
+            }
+            nav ul.active {
+                max-height: 400px;
+                box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+            }
+            nav ul li {
+                padding: 0;
+                border-bottom: 1px solid #f0f0f0;
+            }
+            nav ul li:last-child { border-bottom: none; }
+            nav ul li a {
+                display: block;
+                padding: 16px 24px;
+                font-size: 1em;
+            }
  
-    nav ul.active {
-        transform: translateX(0);
-    }
- 
-    nav ul li {
-        padding: 15px 0;
-        border-bottom: 1px solid #eee;
-    }
- 
-    nav ul li:last-child {
-        border-bottom: none;
-    }
- 
-    .menu-toggle {
-        display: flex;
-    }
+            nav .container { padding: 14px 18px; }
  
     /* Hero */
     .hero {
