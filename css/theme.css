@@ -1,0 +1,129 @@
+        .theme-toggle {
+            width: 52px;
+            height: 28px;
+            border-radius: 14px;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+            background: linear-gradient(135deg, #000000, #ee1717);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3), inset 0 1px 3px rgba(255,255,255,0.15);
+            transition: background 0.5s ease, box-shadow 0.3s ease;
+            flex-shrink: 0;
+        }
+
+        .theme-toggle::before {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .theme-toggle::after {
+            content: '☀️';
+            position: absolute;
+            top: 50%;
+            left: 6px;
+            transform: translateY(-50%);
+            font-size: 11px;
+            line-height: 1;
+            transition: opacity 0.3s ease;
+            pointer-events: none;
+        }
+
+        .theme-toggle.active {
+            background: linear-gradient(135deg, #0f2027, #2980b9);
+            box-shadow: 0 2px 10px rgba(41,128,185,0.4), inset 0 1px 3px rgba(255,255,255,0.15);
+        }
+
+        .theme-toggle.active::before {
+            transform: translateX(24px);
+        }
+
+        .theme-toggle.active::after {
+            content: '🌙';
+            left: auto;
+            right: 6px;
+            left: unset;
+        }
+
+        .theme-toggle:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+            transform: scale(1.08);
+        }
+
+        .theme-toggle:active {
+            transform: scale(0.95);
+        }
+        :root {
+            --grad-start: #000000;
+            --grad-end: #ee1717;
+        }
+
+        body {
+            background: linear-gradient(135deg, var(--grad-start) 0%, var(--grad-end) 100%) !important;
+            transition: background 0.5s ease;
+        }
+        
+        body.theme-blue {
+            --grad-start: #0f2027;
+            --grad-end: #2980b9;
+        }
+
+        /* Override gradient-using elements on blue theme */
+        body.theme-blue .skill {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+        }
+
+        body.theme-blue .project-card {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+        }
+
+        body.theme-blue nav .logo {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        body.theme-blue nav a::after {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+        }
+
+        body.theme-blue h2::after {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+        }
+
+        body.theme-blue .submit-btn {
+            background: linear-gradient(135deg, #1a6fa8 0%, #2980b9 100%);
+            box-shadow: 0 5px 20px rgba(41, 128, 185, 0.4);
+        }
+
+        body.theme-blue .submit-btn:hover {
+            box-shadow: 0 8px 30px rgba(41, 128, 185, 0.6);
+        }
+
+        body.theme-blue .form-group input:focus,
+        body.theme-blue .form-group textarea:focus {
+            border-color: #2980b9;
+            box-shadow: 0 0 0 3px rgba(41, 128, 185, 0.2);
+        }
+
+        body.theme-blue .social-link:hover {
+            background: rgba(41, 128, 185, 0.2);
+            border-color: #2980b9;
+        }
+
+        body.theme-blue .quick-links a:hover {
+            color: #2980b9;
+        }
+
+        body.theme-blue .theme-toggle {
+            background: linear-gradient(135deg, #0f2027 0%, #2980b9 100%);
+        }

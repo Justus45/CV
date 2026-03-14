@@ -1,106 +1,229 @@
 <!DOCTYPE html>
 <html lang="fi">
 <head>
-    <!--Sivu responsiiviseksi-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Portfolio Justus</title>
-    <!--Linkki tyylitiedostoon-->
-    <link rel="stylesheet" href="cvtyyli.css">
-     <link rel="icon" href="https://www.shipducky.com/cdn/shop/products/Instagrampost-1a.jpg?v=1660097941&width=1445" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cvtyyli.css">
+      <link rel="stylesheet" href="css/theme.css">
+    <link rel="icon" href="/images/fav.png" type="image/x-icon">
+    <title>Portfolio</title>
 </head>
-<body> 
-    <!--Navbar tehty linkit johtavat eri sivuille-->
-    <ul>
-    <li><a href="index.html">Etusivu</a></li>
-    <li><a href="Kiinnostuksenkohteet.html">kiinnostuksen kohteitani ja osaaminen</a></li>
-    <li><a href="portfolio.html">Minun töitäni</a></li>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">JP</div>
+            <ul id="navMenu">
+                <li><a href="#home">Etusivu</a></li>
+                <li><a href="#projects">Projektit</a></li>
+                <li><a href="#skills">Osaaminen</a></li>
+                <li><a href="tietoja.html">Tietoja minusta</a></li>
+            </ul>
+            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Vaihda teema" aria-label="Vaihda teema"></button>
+        </div>
+    </nav>
 
+    <header>
+        <div class="container">
+            <div class="profile-image">
+                <img src="images/justus.jpeg" alt="Justus Putkonen">
+            </div>
+            <h1>Justus Putkonen</h1>
+            <p>Web Developer & Designer</p>
+        </div>
+    </header>
 
-    </ul>
-    <!--Headerissa kuva sekä tekstit-->
-        <header>
-            <div class="img-container">
-                <img src="portfoliokuva.jpeg" alt="">
-                </div>
-                <div class="language-switcher">
-  <a href="index.html">FI Suomi</a> | 
-  <a href="indexen.html">EN English</a>
-</div>
+    <div class="container">
+        <div class="content-box" id="home">
+            <div class="about">
+               Olen 18‑vuotias ohjelmistokehittäjäopiskelija Savon ammattiopistosta, ja intohimonani ja tarkoituksenani on rakentaa selkeitä, toimivia ja visuaalisesti viimeisteltyjä käyttöliittymiä.
+               Tuöen erikoistumaan opinnoissani nykyaikaisiin web‑teknologioihin ja käyttöliittymäsuunnitteluun. Nautin paljon siitä, kun saan luotua ratkaisuja, jotka eivät ainoastaan näytä hyviltä, vaan myös toimivat luotettavasti ja tarjoavat käyttäjälle sujuvan kokemuksen.
+            </div>
+        </div>
 
-<h1>🖥️Justus Putkonen</h1>
-<h6>Savon ammattiopisto</h6> 
-<hr size="15">
-<h3>Tietoa minusta:</h3>
-<p>Nimeni on Justus. Olen 17-vuotias tieto -ja viestintätekniikan opiskeljia savon ammattiopistosta. Opiskelen toista vuotta, eli käsitys alasta ja ohjelmoinnista on alkanut muotoutua minulle jo. Haluan oppia kokoajan uutta, mikä toimii hyvänä motivaattorina minulle. Vapaa aikaani kulutan joko kavereiden kanssa tai urheillessa. Pääkieleni on suomi, mutta pärjään myös hyvin Englannin kielellä<br></p>
-<h3>Koulutukset ja työkokemus</h3>
+        <div class="content-box" id="projects">
+          <h2>Projektit</h2>
+          <div class="projects">
+              <div class="project-card">
+                <h3>tulossa myöhemmin</h3>
+                  <p></p>
+                  <a href="" target="_blank" class="project-link">Avaa projekti</a>
+              </div>
+          </div>
+        </div>
 
-<!--listattu asioita-->
-<div class="timeline">
-  <div class="timeline-item">
-    <h4>📚 Peruskoulu</h4>
-    <p>2015–2024</p>
+        <div class="skill-box" id="skills">
+          <h2>Osaaminen</h2>
+          <div class="skills">
+              <div class="skill">JavaScript</div>
+              <div class="skill">Html</div>
+              <div class="skill">PHP</div>
+              <div class="skill">SQL</div>
+              <div class="skill">CSS</div>
+              <div class="skill">API-rajapinnat</div>
+              <div class="skill">Inkscape</div>
+              <div class="skill">Git</div>
+              <div class="skill">Visual studio code</div>
+              <div class="skill">Visual studio</div>
+          </div>
+      </div>
+
+      <h2 class="section-title">Ota yhteyttä</h2>
+
+      <div class="contact-section">
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+        <script type="text/javascript">
+           (function(){
+              emailjs.init({ publicKey: "WHMAfkRIsMHpu0h48" });
+           })();
+        </script>
+          <div class="contact-intro">
+              <p>Kiinnostuitko? Jätä viesti alle, niin otan yhteyttä mahdollisimman pian!</p>
+          </div>
+          
+          <form class="contact-form" id="contactForm">
+              <div class="form-row">
+                  <div class="form-group">
+                      <label for="name">Nimi *</label>
+                      <input type="text" id="name" name="name" required placeholder="Nimesi">
+                  </div>
+                  <div class="form-group">
+                      <label for="email">Sähköposti *</label>
+                      <input type="email" id="email" name="email" required placeholder="esimerkki@email.com">
+                  </div>
+              </div>
+              <div class="form-group">
+                  <label for="subject">Aihe</label>
+                  <input type="text" id="subject" name="subject" placeholder="Aihe tai syy yhteydenottoon">
+              </div>
+              <div class="form-group">
+                  <label for="message">Viesti *</label>
+                  <textarea id="message" name="message" rows="6" required placeholder="Kirjoita viestisi tähän..."></textarea>
+              </div>
+              <button type="submit" class="submit-btn" onclick="sendEmail()">
+                  <span>Lähetä viesti</span>
+              </button>
+          </form>
+          
+          <div class="success-message" id="successMessage">
+              <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+              <h3>Viesti lähetetty!</h3>
+              <p>Kiitos yhteydenotosta. Vastaan sinulle mahdollisimman pian.</p>
+          </div>
+      </div>
+
   </div>
-  <div class="timeline-item">
-    <h4>💻 Tieto- ja viestintätekniikan perustutkinto</h4>
-    <p>2024– (kesken)</p>
+
+<footer>
+  <div class="footer-content">
+      <div class="footer-section">
+          <h3>Justus Putkonen</h3>
+          <p>Tieto- ja viestintätekniikan opiskelija, joka on kiinnostunut web-kehityksestä ja ohjelmoinnista. Olen etsimässä mahdollisuuksia oppia ja kasvaa alan ammattilaiseksi.</p>
+      </div>
+      <div class="footer-section">
+          <h3>Sosiaalinen media</h3>
+          <div class="social-links">
+              <a href="https://github.com/Justus45" class="social-link" target="_blank">
+                  <div class="social-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                      </svg>
+                  </div>
+                  <span>GitHub</span>
+              </a>
+              <a href="https://linkedin.com/in/yourusername" class="social-link" target="_blank">
+                  <div class="social-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                      </svg>
+                  </div>
+                  <span>LinkedIn</span>
+              </a>
+              <a href="mailto:justusit3@gmail.com" class="social-link">
+                  <div class="social-icon">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                          <path d="M0 3v18h24v-18h-24zm6.623 7.929l-4.623 5.712v-9.458l4.623 3.746zm-4.141-5.929h19.035l-9.517 7.713-9.518-7.713zm5.694 7.188l3.824 3.099 3.83-3.104 5.612 6.817h-18.779l5.513-6.812zm9.208-1.264l4.616-3.741v9.348l-4.616-5.607z"/>
+                      </svg>
+                  </div>
+                  <span>Sähköposti</span>
+              </a>
+          </div>
+      </div>
+      <div class="footer-section">
+          <h3>Pikalinkit</h3>
+          <div class="quick-links">
+              <a href="index.html#home">Etusivu</a>
+              <a href="index.html#projects">Projektit</a>
+              <a href="index.html#skills">Osaaminen</a>
+              <a href="tietoja.html">Tietoja minusta</a>
+          </div>
+      </div>
   </div>
-  <div class="timeline-item">
-    <h4>🛒 Kesätyö S-marketissa</h4>
-    <p>4 viikkoa</p>
+  <div class="footer-bottom">
+      <p>&copy; 2026 Justus Putkonen. Kaikki oikeudet pidätetään.</p>
   </div>
-  <div class="timeline-item">
-    <h4>🔌 TET-harjoittelu sähköalan yrityksessä</h4>
-    <p>2 viikkoa</p>
-  </div>
-</div>
-</ul>
-</header>
-<!--Footeri sivun alhaalla-->
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<footer class="footer">
-        <div class="footer-content">
-            <p><strong>Yhteystiedot:</strong></p>
-        <p>📞 puh: 0456145772</p>
-        <p>✉️ Gmail: justus.putkonen@gmail.com</p>
-        <p>&copy; 2025 Justus Putkonen</p>
-        </footer>
-    </div>
-    
+</footer>
+
+    <script>
+        //mobiili navigointi
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                const offset = 80;
+                const targetPosition = target.offsetTop - offset;
+                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        //sähköposti lähetys
+        function sendEmail() {
+            const templateparams = {
+                //Hakee tiedot formista
+                name: document.getElementById("name").value,
+                email: document.getElementById("email").value,
+                subject: document.getElementById("subject").value,
+                message: document.getElementById("message").value,
+            };
+            emailjs.send("service_zq1xhgx", "template_6r9soz7", templateparams)
+                .then(() => alert("Sähköposti on lähetetty!"))
+                .catch(() => alert("Sähköpostia ei lähetetty."));
+        }
+
+        let isBlueTheme = false;
+
+        //Teeman vaihto
+
+        function toggleTheme() {
+            isBlueTheme = !isBlueTheme;
+            const body = document.body;
+            const btn = document.getElementById('themeToggle');
+
+            if (isBlueTheme) {
+                body.classList.add('theme-blue');
+                btn.classList.add('active');
+            } else {
+                body.classList.remove('theme-blue');
+                btn.classList.remove('active');
+            }
+
+            localStorage.setItem('theme', isBlueTheme ? 'blue' : 'red');
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'blue') {
+                isBlueTheme = false;
+                toggleTheme();
+            }
+        });
+    </script>
 </body>
-
-</html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </html>
