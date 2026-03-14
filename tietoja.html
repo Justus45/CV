@@ -153,10 +153,41 @@
         </div>
       </footer>
     <script>
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
+       // Burgeri-valikko
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Sulje valikko kun linkkiä klikataan
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('open');
+
+                // Smooth scroll ankkurilinkeille
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offset = 80;
+                        const targetPosition = target.offsetTop - offset;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+
+        // Sulje valikko klikatessa sen ulkopuolella
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('open');
+            }
+        });
 
          let isBlueTheme = false;
 
@@ -176,14 +207,13 @@
             localStorage.setItem('theme', isBlueTheme ? 'blue' : 'red');
         }
 
-     window.addEventListener('DOMContentLoaded', () => {
-    const saved = localStorage.getItem('theme');
-    if (saved === 'blue') {
-        isBlueTheme = false;
-        toggleTheme();
-    }
-});
-
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem('theme');
+            if (saved === 'blue') {
+                isBlueTheme = false;
+                toggleTheme();
+            }
+        });
     </script>
 </body>
 </html>

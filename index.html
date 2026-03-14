@@ -4,9 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/cvtyyli.css">
-      <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/theme.css">
     <link rel="icon" href="/images/fav.png" type="image/x-icon">
     <title>Portfolio</title>
+    <style>
+        /* Burgeri-napin animaatio */
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: #333;
+            border-radius: 2px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .menu-toggle.open span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+        .menu-toggle.open span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .menu-toggle.open span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+    </style>
 </head>
 <body>
     <nav>
@@ -18,7 +40,14 @@
                 <li><a href="#skills">Osaaminen</a></li>
                 <li><a href="tietoja.html">Tietoja minusta</a></li>
             </ul>
-            <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Vaihda teema" aria-label="Vaihda teema"></button>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="menu-toggle" id="menuToggle" aria-label="Avaa valikko">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Vaihda teema" aria-label="Vaihda teema"></button>
+            </div>
         </div>
     </nav>
 
@@ -166,27 +195,45 @@
 </footer>
 
     <script>
-        //mobiili navigointi
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
+        // Burgeri-valikko
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
 
-        document.querySelectorAll('nav a[href^="#"]').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                const offset = 80;
-                const targetPosition = target.offsetTop - offset;
-                window.scrollTo({ top: targetPosition, behavior: 'smooth' });
-                document.getElementById('navMenu').classList.remove('active');
+        menuToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            menuToggle.classList.toggle('open');
+        });
+
+        // Sulje valikko kun linkkiä klikataan
+        document.querySelectorAll('#navMenu a').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('open');
+
+                // Smooth scroll ankkurilinkeille
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    const target = document.querySelector(href);
+                    if (target) {
+                        const offset = 80;
+                        const targetPosition = target.offsetTop - offset;
+                        window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+                    }
+                }
             });
         });
 
-        //sähköposti lähetys
+        // Sulje valikko klikatessa sen ulkopuolella
+        document.addEventListener('click', function(e) {
+            if (!navMenu.contains(e.target) && !menuToggle.contains(e.target)) {
+                navMenu.classList.remove('active');
+                menuToggle.classList.remove('open');
+            }
+        });
+
+        // Sähköposti lähetys
         function sendEmail() {
             const templateparams = {
-                //Hakee tiedot formista
                 name: document.getElementById("name").value,
                 email: document.getElementById("email").value,
                 subject: document.getElementById("subject").value,
@@ -198,8 +245,6 @@
         }
 
         let isBlueTheme = false;
-
-        //Teeman vaihto
 
         function toggleTheme() {
             isBlueTheme = !isBlueTheme;
