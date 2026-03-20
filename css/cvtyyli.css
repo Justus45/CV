@@ -200,7 +200,6 @@
             line-height: 1.8;
         }
 .project-card img {
-  width: 100%;
   height: 350px; 
   object-fit: contain; 
   background-color: #ffffff; 
@@ -219,6 +218,8 @@
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
   background: linear-gradient(135deg, #000000 0%, #ee1717 100%);
   backdrop-filter: blur(10px);
   padding: 40px;
@@ -230,7 +231,7 @@
 
 
 .project-card:hover img {
-  transform: scale(1.45);
+  transform: scale(1.1);
 }
 .project-link {
   display: inline-block;
