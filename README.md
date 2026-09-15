@@ -46,14 +46,6 @@ Lomake toimii EmailJS‑palvelun kautta.
 - **EmailJS** – yhteydenottolomakkeen sähköpostien lähetys  
 - **GitHub Pages** – sivuston julkaisu  
 
----
 
-## 🌍 Demo
-
-Portfolio on julkaistu GitHub Pagesissa:
-
-👉 *Lisää linkki tähän, kun julkaiset sivun*
-
----
 
 
