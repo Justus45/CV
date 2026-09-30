@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cvtyyli.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="icon" href="images/fav.png" type="image/x-icon">
+    <title>Justus Putkonen — Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="container">
+            <div class="logo">JP</div>
+            <ul id="navMenu">
+                <li><a href="#home">Etusivu</a></li>
+                <li><a href="#projects">Projektit</a></li>
+                <li><a href="#skills">Osaaminen</a></li>
+                <li><a href="#contact">Yhteystiedot</a></li>
+                <li><a href="tietoja.html">Tietoja minusta</a></li>
+            </ul>
+            <div style="display:flex;align-items:center;gap:12px;">
+                <button class="menu-toggle" id="menuToggle" aria-label="Avaa valikko">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="theme-toggle" id="themeToggle" onclick="toggleTheme()" title="Vaihda teema" aria-label="Vaihda teema"></button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Halutessasi kopioi tähän etusivun header/nav -->
+
+    <main>
+        <div class="container">
+
+            <h1 class="section-title">projektit</h1>
+
+            <div class="projects-grid">
+
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="images/huolto.png" alt="Kallantien autohuolto -verkkosivun näkymä">
+                    </div>
+                    <div class="project-body">
+                        <h3>Kallantien autohuolto</h3>
+                        <p>Toteutettu oppilastyönä yritykselle. Ensimmäinen asiakastyöni.</p>
+                        <a href="https://kallantienautohuolto.fi/" target="_blank" rel="noopener" class="project-link">
+                            Avaa projekti
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="images/kalenteri.png" alt="Huoltovarauskalenterin näkymä">
+                    </div>
+                    <div class="project-body">
+                        <h3>Huoltovarauskalenteri</h3>
+                        <p>Huoltovarauskalenteri, joka on toteutettu oppilastyönä yritykselle.</p>
+                        <a href="https://github.com/Justus45/kalenteri" target="_blank" rel="noopener" class="project-link">
+                            Avaa projekti
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Kopioi uusi kortti tähän:
+                <article class="project-card">
+                    <div class="project-media">
+                        <img src="images/UUSI.png" alt="Kuvaus kuvasta">
+                    </div>
+                    <div class="project-body">
+                        <h3>Projektin nimi</h3>
+                        <p>Lyhyt kuvaus projektista.</p>
+                        <a href="LINKKI" target="_blank" rel="noopener" class="project-link">
+                            Avaa projekti
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                        </a>
+                    </div>
+                </article>
+                -->
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Halutessasi kopioi tähän etusivun footer -->
+
+</body>
+</html>
