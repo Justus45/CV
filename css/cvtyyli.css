@@ -69,6 +69,48 @@ header{ padding: 76px 0 40px; }
 .project-body h3{ font-size: 1.05rem; margin-bottom: 8px; }
 .project-body p{ font-size: 0.94rem; margin-bottom: 16px; }
 
+.projects-more{
+  display: flex;
+  justify-content: center;
+  margin-top: 32px;
+}
+
+.btn-more{
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: inherit;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-m);
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+
+.btn-more svg{
+  width: 18px;
+  height: 18px;
+  transition: transform .18s ease;
+}
+
+.btn-more:hover{
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+  border-color: currentColor;
+}
+
+.btn-more:hover svg{
+  transform: translateX(4px);
+}
+
+.btn-more:focus-visible{
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
 /* ---------------- OSAAMINEN ---------------- */
 .skills-panel{
   display: grid;
