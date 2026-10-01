@@ -75,6 +75,26 @@ header{ padding: 76px 0 40px; }
   margin-top: 32px;
 }
 
+.project-actions{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
+}
+
+.project-link--download{
+  opacity: .8;
+}
+.project-link--download:hover{
+  opacity: 1;
+}
+.project-link--download svg{
+  transition: transform .18s ease;
+}
+.project-link--download:hover svg{
+  transform: translateY(2px);
+}
+
 .btn-more{
   display: inline-flex;
   align-items: center;
